@@ -27,11 +27,11 @@ export class AllRadiosComponent implements OnInit {
     });
   }
 
-  private receiveRadioName($event) {
+  receiveRadioName($event) {
     this.radioName = $event;
   }
 
-  private setSelectedRadio() {
+  setSelectedRadio() {
     this.selectedRadioName = this.radioName;
   }
 }
