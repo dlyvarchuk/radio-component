@@ -1,0 +1,32 @@
+<div class="radio-container">
+  <mat-card class="radio-card" fxFlex.xs="100%"  fxFlex="300px">
+    <mat-card-header class="radio-head">
+      <mat-card-title class="radio-title">
+        <a class="back-button" routerLink="">
+          <i class="fa fa-angle-left"></i>
+        </a>
+          Stations
+        <button mat-button class="power-button" (click)="selectedRadioName = null; radioName = null">
+          <i class="fa fa-power-off"></i>
+        </button>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="radio-content">
+      <app-single-radio
+        (radioEvent)="receiveRadioName($event)"
+        *ngFor="let radio of radios.radios" (click)="setSelectedRadio()"
+        [radioInput]="radio"
+        [radioInputName]="selectedRadioName"
+      >
+      </app-single-radio>
+    </mat-card-content>
+    <mat-card-footer class="radio-foot">
+      <p *ngIf="radioName != null">
+        CURRENTLY PLAYING
+      </p>
+      <p class="radio-name">
+        {{radioName}}
+      </p>
+    </mat-card-footer>
+  </mat-card>
+</div>

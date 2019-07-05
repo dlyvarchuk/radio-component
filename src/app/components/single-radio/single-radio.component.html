@@ -1,0 +1,15 @@
+<mat-action-list class="radio-list" fxFlex="300px">
+  <div class="radio-image" *ngIf="radioInput.name == radioInputName">
+    <i class="fa fa-minus-circle fa-3x radio-button-minus"></i>
+    <img class="image" src="{{radioInput.image}}">
+    <i class="fa fa-plus-circle fa-3x radio-button-plus"></i>
+  </div>
+  <button class="radio-button" style="width: 100%" mat-button (click)="sendRadioName(radioInput.name)">
+    <mat-list-item>
+        <p matLine class="radio-name">
+          <span> {{radioInput.name}} </span>
+          <span>{{radioInput.frequency}} </span>
+        </p>
+    </mat-list-item>
+  </button>
+</mat-action-list>
